@@ -78,18 +78,11 @@ public class SinhVien implements Serializable {
 	public void nhapSV(int n){
 		Scanner input = new Scanner(System.in);
 		String regex ="\\d{3}-\\d{7}";
-		String id	= "\\d{6}";
 		String ema = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
 		for (int i = 0; i < n; i++) {
 			System.out.println("Thong tin sinh vien "+(i+1));
 			System.out.print("Ma so sinh vien (xxxxxx): ");
-			do{
-				try {
-					MaSinhVien = Integer.parseInt(input.nextLine());
-				} catch (Exception e2) {
-					System.out.println("mã số không hợp lệ");
-					System.out.print("nhập lại số (xxxxxx): ");
-				}
+			MaSinhVien = Integer.parseInt(input.nextLine());
 			}while(!SoDienThoai.matches(regex));
 			System.out.println();
 			System.out.print("Ho va Ten: ");
@@ -99,7 +92,6 @@ public class SinhVien implements Serializable {
 			tuoi = Integer.parseInt(input.nextLine());
 			System.out.println();
 			System.out.print("so dien thoai (xxx-xxxxxxx): ");
-			
 			do{
 				try {
 					validatePhoneNumber(SoDienThoai = input.nextLine());
